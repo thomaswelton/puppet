@@ -1,0 +1,30 @@
+[submodule "modules/vcsrepo"]
+    path = modules/vcsrepo
+    url = https://github.com/puppetlabs/puppetlabs-vcsrepo.git
+[submodule "modules/docker"]
+    path = modules/docker
+    url = https://github.com/garethr/garethr-docker.git
+[submodule "modules/nginx"]
+    path = modules/nginx
+    url = https://github.com/jfryman/puppet-nginx.git
+[submodule "modules/apt"]
+    path = modules/apt
+    url = https://github.com/puppetlabs/puppetlabs-apt.git
+[submodule "modules/stdlib"]
+    path = modules/stdlib
+    url = https://github.com/puppetlabs/puppetlabs-stdlib.git
+[submodule "modules/concat"]
+    path = modules/concat
+    url = https://github.com/puppetlabs/puppetlabs-concat.git
+[submodule "modules/epel"]
+    path = modules/epel
+    url = https://github.com/stahnma/puppet-module-epel.git
+[submodule "modules/ssh_keygen"]
+    path = modules/ssh_keygen
+    url = https://github.com/maestrodev/puppet-ssh_keygen.git
+[submodule "modules/nodejs"]
+    path = modules/nodejs
+    url = https://github.com/willdurand/puppet-nodejs.git
+[submodule "modules/wget"]
+    path = modules/wget
+    url = https://github.com/maestrodev/puppet-wget.git
