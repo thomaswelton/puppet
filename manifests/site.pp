@@ -69,7 +69,7 @@ node default{
     }
 
     ## Pull our common dokcer images
-    $docker_images = ['thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
+    $docker_images = ['shipyard', 'thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
     docker::image { $docker_images:
         require => Package['docker']
     }
@@ -105,11 +105,5 @@ node default{
     file{ '/usr/local/bin/shipyard-agent':
         mode => '+x',
         require => Wget['shipyard-agent']
-    }
-
-    docker::run { 'shipyard':
-        image   => 'shipyard/shipyard',
-        require => Package['docker'],
-        ports => ['80:80', '8000:8000'],
     }
 }
