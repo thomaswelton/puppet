@@ -104,6 +104,6 @@ node default{
 
     file{ '/usr/local/bin/shipyard-agent':
         mode => '+x',
-        require => Wget['shipyard-agent']
+        require => Wget::Fetch['shipyard-agent']
     }
 }
