@@ -20,7 +20,7 @@ node default{
         require => User['root']
     }
 
-    $packages = [ "vim", "zsh", "rubygems", "git"]
+    $packages = [ "vim", "zsh", "rubygems", "git", "iptables-persistent", "iptables"]
     package { $packages:
         ensure => "installed",
         provider => apt
@@ -69,7 +69,7 @@ node default{
     }
 
     ## Pull our common dokcer images
-    $docker_images = ['shipyard', 'thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
+    $docker_images = ['shipyard/shipyard', 'thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
     docker::image { $docker_images:
         require => Package['docker']
     }
