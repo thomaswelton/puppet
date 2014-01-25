@@ -88,11 +88,6 @@ node default{
         provider => npm
     }
 
-
-    class supervisord {
-        $install_pip  => true,
-    }
-
     ## Install shipyard
     import 'shipyard.pp'
 }
