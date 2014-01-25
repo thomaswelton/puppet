@@ -63,7 +63,10 @@ node default{
 
 
     ## Install docker
-    include docker
+    class { 'docker':
+      tcp_bind    => 'tcp://127.0.0.1:4243',
+      socket_bind => 'unix:///var/run/docker.sock',
+    }
 
     ## Pull our common dokcer images
     $docker_images = ['thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
@@ -73,7 +76,7 @@ node default{
 
 
     ## Install nginx
-    class { 'nginx': }
+    ## class { 'nginx': }
 
     class { 'nodejs':
         version => 'v0.10.17',
@@ -84,4 +87,12 @@ node default{
     package { 'bower':
         provider => npm
     }
+
+
+    class supervisord {
+        $install_pip  => true,
+    }
+
+    ## Install shipyard
+    import 'shipyard.pp'
 }
