@@ -4,9 +4,6 @@
 [submodule "modules/docker"]
     path = modules/docker
     url = https://github.com/garethr/garethr-docker.git
-[submodule "modules/nginx"]
-    path = modules/nginx
-    url = https://github.com/jfryman/puppet-nginx.git
 [submodule "modules/apt"]
     path = modules/apt
     url = https://github.com/puppetlabs/puppetlabs-apt.git
@@ -31,6 +28,3 @@
 [submodule "modules/firewall"]
 	path = modules/firewall
 	url = https://github.com/puppetlabs/puppetlabs-firewall.git
-[submodule "modules/supervisord"]
-	path = modules/supervisord
-	url = https://github.com/ajcrowe/puppet-supervisord.git

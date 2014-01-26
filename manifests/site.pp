@@ -20,7 +20,7 @@ node default{
         require => User['root']
     }
 
-    $packages = [ "vim", "zsh", "rubygems", "git", "iptables-persistent", "iptables"]
+    $packages = [ "vim", "zsh", "rubygems", "git", "supervisor", "iptables-persistent", "iptables"]
     package { $packages:
         ensure => "installed",
         provider => apt
@@ -61,6 +61,15 @@ node default{
         source   => 'git://github.com/thomaswelton/dotfiles.git',
     }
 
+    class { 'nodejs':
+        version => 'v0.10.17',
+        make_install => false
+    }
+
+    $npm_packages = ['bower', 'grunt-cli']
+    package { 'bower':
+        provider => npm
+    }
 
     ## Install docker
     class { 'docker':
@@ -72,20 +81,6 @@ node default{
     $docker_images = ['shipyard/shipyard', 'thomaswelton/ubuntu', 'thomaswelton/ubuntu-php']
     docker::image { $docker_images:
         require => Package['docker']
-    }
-
-
-    ## Install nginx
-    ## class { 'nginx': }
-
-    class { 'nodejs':
-        version => 'v0.10.17',
-        make_install => false
-    }
-
-    $npm_packages = ['bower', 'grunt-cli']
-    package { 'bower':
-        provider => npm
     }
 
     ## Install shipyard
