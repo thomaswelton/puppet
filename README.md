@@ -26,13 +26,17 @@ Once authorized, you can start the agent:
 
 `./shipyard-agent -url http://myshipyardhost -key myshipyardkey`
 
-The agent will need to be run in the background. So create a supervisor program `/etc/supervisor/conf.d/shipyard-agent.conf`
+The agent will need to be run in the background. So create an upstart job `/etc/init/shipyard-agent.conf `
 
 ```
-[program:shipyard-agent]
-command=shipyard-agent -url http://myshipyardhost -key myshipyardkey
-autostart=true
-autorestart=true
-stderr_logfile=/var/log/shipyard-agent.log
-stdout_logfile=/var/log/shipyard-agent.log
+description     "shipyard-agent management daemon"
+author          "Thomas Welton"
+
+start on started network
+stop on stopping network
+stop on starting shutdown
+
+exec shipyard-agent -url http://thomaswelton.com:8000 -key 76d20eb3371041ce9fe29b047ed9205c
 ```
+
+Start it with `start shipyard-agent`

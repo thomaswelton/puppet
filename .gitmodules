@@ -19,9 +19,6 @@
 [submodule "modules/ssh_keygen"]
     path = modules/ssh_keygen
     url = https://github.com/maestrodev/puppet-ssh_keygen.git
-[submodule "modules/nodejs"]
-    path = modules/nodejs
-    url = https://github.com/willdurand/puppet-nodejs.git
 [submodule "modules/wget"]
     path = modules/wget
     url = https://github.com/maestrodev/puppet-wget.git

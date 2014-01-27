@@ -20,7 +20,7 @@ node default{
         require => User['root']
     }
 
-    $packages = [ "vim", "zsh", "rubygems", "git", "supervisor", "iptables-persistent", "iptables"]
+    $packages = [ "vim", "zsh", "rubygems", "git", "iptables-persistent", "iptables"]
     package { $packages:
         ensure => "installed",
         provider => apt
@@ -59,16 +59,6 @@ node default{
         ensure   => present,
         provider => git,
         source   => 'git://github.com/thomaswelton/dotfiles.git',
-    }
-
-    class { 'nodejs':
-        version => 'v0.10.17',
-        make_install => false
-    }
-
-    $npm_packages = ['bower', 'grunt-cli']
-    package { 'bower':
-        provider => npm
     }
 
     ## Install docker
