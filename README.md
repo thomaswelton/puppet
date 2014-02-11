@@ -24,7 +24,7 @@ action menu for the host and select "Authorize Host".
 
 Once authorized, you can start the agent:
 
-`./shipyard-agent -url http://myshipyardhost -key myshipyardkey`
+`./shipyard-agent -url http://myshipyardhost:shipyardport -register`
 
 The agent will need to be run in the background. So create an upstart job `/etc/init/shipyard-agent.conf `
 

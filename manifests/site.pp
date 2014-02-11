@@ -81,7 +81,7 @@ node default{
     }
 
     wget::fetch { "shipyard-agent":
-        source      => 'https://github.com/shipyard/shipyard-agent/releases/download/v0.0.9/shipyard-agent',
+        source      => 'https://github.com/shipyard/shipyard-agent/releases/download/v0.1.0/shipyard-agent',
         destination => '/usr/local/bin/shipyard-agent',
         timeout     => 0,
         verbose     => false,
